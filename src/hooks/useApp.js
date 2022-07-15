@@ -1,10 +1,12 @@
 import { createContext, useContext } from "react";
+import { managerAbi } from "../utils";
 
 export const defaults = {
   title: "PayMeMatic",
-  description: "",
-  chainId: 80001,
-  managerAddress: "",
+  description: "Accept payments with PayMeMatic",
+  chainId: process.env.NEXT_PUBLIC_CHAIN_ID,
+  managerAddress: process.env.NEXT_PUBLIC_MANAGER,
+  managerAbi,
   accounts: [
     {
       address: "",
