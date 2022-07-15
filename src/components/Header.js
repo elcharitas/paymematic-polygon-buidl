@@ -58,7 +58,7 @@ export const Header = ({ pageTitle }) => {
                 className="inline-flex font-bold !leading-none whitespace-nowrap rounded-full outline-none transition-colors duration-200 text-sm xl:text-lg py-4 px-6 rounded-7xl text-white bg-secondary-5 hover:bg-primary-2 py-3 px-3.5 xl:py-4 xl:px-6"
               >
                 {accounts.length > 0 ? (
-                  ""
+                  accounts[0].address
                 ) : (
                   <span>
                     <span className="xs:hidden">Connect Wallet</span>
