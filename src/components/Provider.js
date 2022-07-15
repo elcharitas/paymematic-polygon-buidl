@@ -3,9 +3,6 @@ import { defaults, AppContext } from "../hooks";
 
 export const AppProvider = ({ children }) => {
   const [state, update] = useImmer({
-    title: "Pay Me Matic",
-    description: "",
-    managerAddress: "",
     accounts: [],
   });
 
