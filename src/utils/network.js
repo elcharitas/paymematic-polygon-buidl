@@ -31,7 +31,7 @@ export const provider = {
   },
 
   async disconnect() {
-    this.clearCachedProvider();
+    web3Modal().clearCachedProvider();
     this.instance = null;
   },
 
