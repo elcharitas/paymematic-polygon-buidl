@@ -15,9 +15,10 @@ export function useWallet() {
         const accountList = [];
         for await (const address of await eth3.listAccounts()) {
           accountList.push({
-            fullAddress: address,
+            hash: address,
             address: formatAddress(address),
             balance: formatBigNumber(await eth3.getBalance(address)),
+            connected: Date.now(),
           });
         }
         setAccounts(accountList);
@@ -26,6 +27,7 @@ export function useWallet() {
 
   const disconnectWallet = async () => {
     await provider.disconnect().then(() => {
+      setAccounts([]);
       snackbar("Wallet has been disconnected");
     });
   };
