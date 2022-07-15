@@ -38,8 +38,12 @@ export const provider = {
   async ethers(chainId, reject) {
     return await this.connect(chainId, reject)
       .then((instance) => {
+        if (!instance)
+          return reject({
+            message: "No available wallet instance. Try using a dApp browser",
+          });
         if (formatBigNumber(instance.chainId, "wei") !== this.chainId)
-          return reject({ message: "Wrong chainId" });
+          return reject({ message: "Required chain/network is not available" });
         return new ethers.providers.Web3Provider(instance, chainId);
       })
       .catch(reject);
