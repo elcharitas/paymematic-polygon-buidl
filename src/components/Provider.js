@@ -1,17 +1,24 @@
+import { useEffect, useMemo } from "react";
 import { useImmer } from "use-immer";
 import { defaults, AppContext } from "../hooks";
-import { store } from "../utils";
+import { getStore, setStore } from "../utils";
 
 export const AppProvider = ({ children }) => {
-  const [state, setState] = useImmer(
-    store("app") || {
-      accounts: [],
-    }
+  const [state, setState] = useImmer({
+    accounts: [],
+  });
+
+  const store = useMemo(
+    () =>
+      getStore("app", {
+        accounts: [],
+      }),
+    [state]
   );
 
   const update = (fn) => {
     setState(fn);
-    store("app", state);
+    setStore("app", state);
   };
 
   const reset = (key) => {
@@ -20,8 +27,18 @@ export const AppProvider = ({ children }) => {
     });
   };
 
+  useEffect(
+    () =>
+      setState((draft) => {
+        Object.entries(getStore("app")).forEach(([key, value]) => {
+          draft[key] = value;
+        });
+      }),
+    []
+  );
+
   return (
-    <AppContext.Provider value={{ ...defaults, ...state, update, reset }}>
+    <AppContext.Provider value={{ ...defaults, ...store, update, reset }}>
       {children}
     </AppContext.Provider>
   );
