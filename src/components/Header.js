@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
+import { Link } from "./Link";
 import { useApp, useWallet } from "../hooks";
 
 export const Header = ({ pageTitle }) => {
@@ -19,14 +19,10 @@ export const Header = ({ pageTitle }) => {
             className="relative flex items-center justify-between rounded-full text-white px-8 py-3 bg-secondary-1"
             aria-label="Global"
           >
-            <div className="flex items-center" role="button">
-              <Link href="/">
-                <>
-                  <span className="logo">&nbsp;</span>
-                  <span className="ml-4 xs:hidden">{title}</span>
-                </>
-              </Link>
-            </div>
+            <Link href="/" shallow className="flex items-center" role="button">
+              <span className="logo">&nbsp;</span>
+              <span className="ml-4 xs:hidden">{title}</span>
+            </Link>
             <div className="flex items-center -mr-1 hidden">
               <button
                 className="inline-flex items-center justify-center p-2 text-white rounded-full bg-black hover:bg-primary-2 focus:outline-none"

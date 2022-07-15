@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "./Link";
 import { useApp } from "../hooks";
 
 export function Footer() {
@@ -7,10 +7,11 @@ export function Footer() {
     <div className="px-4 py-12 md:px-0 bg-black border-gray-2 text-white">
       <div className="mt-5 text-xs text-center xl:mt-8 xl:text-base">
         <div className="mt-8 mb-4 justify-center items-center">
-          <Link href="/">
-            <button className="inline-flex font-bold !leading-none whitespace-nowrap rounded outline-none transition-colors duration-200 text-sm xl:text-lg py-4 px-6 rounded-full text-white bg-secondary-5 hover:bg-primary-2  py-4 px-6 ml-4 justify-center items-center">
-              Create a PayPage - It&lsquo;s Free
-            </button>
+          <Link
+            href="/#create"
+            className="inline-flex font-bold !leading-none whitespace-nowrap rounded outline-none transition-colors duration-200 text-sm xl:text-lg py-4 px-6 rounded-full text-white bg-secondary-5 hover:bg-primary-2  py-4 px-6 ml-4 justify-center items-center"
+          >
+            Create a PayPage - It&lsquo;s Free
           </Link>
           <div className="p-4">Get your personalized pay page in minutes.</div>
         </div>
@@ -19,10 +20,8 @@ export function Footer() {
             <div className="flex my-4 justify-between">
               <span>
                 built by &nbsp;
-                <Link href="/">
-                  <span className="text-secondary-3" role="button">
-                    elcharitas
-                  </span>
+                <Link href="/" className="text-secondary-3">
+                  elcharitas
                 </Link>
               </span>
               <Link href="/">Github</Link>
