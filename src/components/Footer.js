@@ -9,7 +9,7 @@ export function Footer() {
         <div className="mt-8 mb-4 justify-center items-center">
           <Link
             href="/#create"
-            className="inline-flex font-bold !leading-none whitespace-nowrap rounded outline-none transition-colors duration-200 text-sm xl:text-lg py-4 px-6 rounded-full text-white bg-secondary-5 hover:bg-primary-2  py-4 px-6 ml-4 justify-center items-center"
+            className="inline-flex font-bold !leading-none whitespace-nowrap rounded outline-none transition-colors duration-200 text-sm xl:text-lg py-4 px-6 rounded-full text-white bg-secondary-5 py-4 px-6 ml-4 justify-center items-center"
           >
             Create a PayPage - It&lsquo;s Free
           </Link>

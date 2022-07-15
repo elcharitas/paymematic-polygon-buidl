@@ -25,7 +25,7 @@ export const Header = ({ pageTitle }) => {
             </Link>
             <div className="flex items-center -mr-1 hidden">
               <button
-                className="inline-flex items-center justify-center p-2 text-white rounded-full bg-black hover:bg-primary-2 focus:outline-none"
+                className="inline-flex items-center justify-center p-2 text-white rounded-full bg-black focus:outline-none"
                 id="headlessui-popover-button-undefined"
                 type="button"
                 aria-expanded="false"
@@ -51,7 +51,7 @@ export const Header = ({ pageTitle }) => {
             <div className="items-center flex">
               <a
                 onClick={connectWallet}
-                className="inline-flex font-bold !leading-none whitespace-nowrap rounded-full outline-none transition-colors duration-200 text-sm xl:text-lg py-4 px-6 rounded-7xl text-white bg-secondary-5 hover:bg-primary-2 py-3 px-3.5 xl:py-4 xl:px-6"
+                className="inline-flex font-bold !leading-none whitespace-nowrap rounded-full outline-none transition-colors duration-200 text-sm xl:text-lg py-4 px-6 rounded-7xl text-white bg-secondary-5 py-3 px-3.5 xl:py-4 xl:px-6"
               >
                 {accounts.length > 0 ? (
                   accounts[0].address

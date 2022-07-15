@@ -13,7 +13,7 @@ const ErrorPage = () => (
       </p>
       <div className="mt-4">
         <Link href="/">
-          <button className="inline-flex font-bold !leading-none whitespace-nowrap rounded outline-none transition-colors duration-200 text-sm xl:text-lg py-4 px-6 rounded-full text-white bg-secondary-5 hover:bg-primary-2  py-4 px-6 ml-4 justify-center items-center">
+          <button className="inline-flex font-bold !leading-none whitespace-nowrap rounded outline-none transition-colors duration-200 text-sm xl:text-lg py-4 px-6 rounded-full text-white bg-secondary-5  py-4 px-6 ml-4 justify-center items-center">
             Claim this Page
           </button>
         </Link>
