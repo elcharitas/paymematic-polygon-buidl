@@ -13,7 +13,7 @@ export const defaults = {
       connected: false,
     },
   ],
-  reset(key) {},
+  setAccounts(accounts) {},
 };
 
 export const AppContext = createContext(defaults);

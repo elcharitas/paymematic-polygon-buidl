@@ -1,44 +1,10 @@
-import { useEffect, useMemo } from "react";
-import { useImmer } from "use-immer";
-import { defaults, AppContext } from "../hooks";
-import { getStore, setStore } from "../utils";
+import { defaults, AppContext, useStore } from "../hooks";
 
 export const AppProvider = ({ children }) => {
-  const [state, setState] = useImmer({
-    accounts: [],
-  });
-
-  const store = useMemo(
-    () =>
-      getStore("app", {
-        accounts: [],
-      }),
-    [state]
-  );
-
-  const update = (fn) => {
-    setState(fn);
-    setStore("app", state);
-  };
-
-  const reset = (key) => {
-    update((draft) => {
-      draft[key] = defaults[key];
-    });
-  };
-
-  useEffect(
-    () =>
-      setState((draft) => {
-        Object.entries(getStore("app")).forEach(([key, value]) => {
-          draft[key] = value;
-        });
-      }),
-    []
-  );
+  const [accounts, setAccounts] = useStore([], "app");
 
   return (
-    <AppContext.Provider value={{ ...defaults, ...store, update, reset }}>
+    <AppContext.Provider value={{ ...defaults, accounts, setAccounts }}>
       {children}
     </AppContext.Provider>
   );
