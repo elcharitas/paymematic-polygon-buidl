@@ -15,8 +15,8 @@ const Home = () => {
               <br /> You Want! Sell It! 😁
             </h1>
             <p className="pb-10 p-8 text-lg text-center mx-auto leading-snug">
-              Join the train and receive matic. You'd be surprised to learn how
-              easy it is.
+              Join the train and receive matic. You&lsquo;d be surprised to
+              learn how easy it is.
             </p>
             <div id="create" className="relative flex items-center">
               <div className="relative flex items-center w-full rounded-full border">
