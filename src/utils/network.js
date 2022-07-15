@@ -1,6 +1,7 @@
 import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 import { formatBigNumber } from "./formats";
+import { managerAbi } from "./abi";
 
 const providerOptions = {
   binancechainwallet: {
@@ -8,14 +9,26 @@ const providerOptions = {
   },
 };
 
-export const web3Modal = (chainId = 4, theme = "dark") => {
+export const web3Modal = (
+  chainId = process.env.NEXT_PUBLIC_CHAIN_ID,
+  theme = "dark"
+) => {
   return new Web3Modal({
     theme,
-    network: chainId,
+    network: Number(chainId),
     cacheProvider: true,
     disableInjectedProvider: false,
     providerOptions,
   });
+};
+
+export const manager = async ({ chainId, sync = false }) => {
+  const address = process.env.NEXT_PUBLIC_MANAGER;
+  const eth3 = sync
+    ? provider.ethersSync(process.env.NEXT_PUBLIC_RPC_NODE)
+    : await provider.ethers(chainId, () => {});
+
+  return new ethers.Contract(address, managerAbi, eth3);
 };
 
 export const provider = {
