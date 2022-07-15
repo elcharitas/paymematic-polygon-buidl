@@ -16,7 +16,7 @@ export const AppProvider = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider value={{ ...state, update, reset }}>
+    <AppContext.Provider value={{ ...defaults, ...state, update, reset }}>
       {children}
     </AppContext.Provider>
   );
