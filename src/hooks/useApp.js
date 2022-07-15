@@ -3,6 +3,7 @@ import { createContext, useContext } from "react";
 export const defaults = {
   title: "Pay Me Matic",
   description: "",
+  chainId: 1,
   managerAddress: "",
   accounts: [
     {
