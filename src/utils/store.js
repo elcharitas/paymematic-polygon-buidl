@@ -6,5 +6,7 @@ export const unlist = (key) => {
 
 export const store = (key, value = null) => {
   if (typeof window !== "object") return null;
-  return value ? localStorage.setItem(key, value) : localStorage.getItem(key);
+  return value
+    ? localStorage.setItem(key, JSON.stringify(value))
+    : JSON.parse(localStorage.getItem(key));
 };
