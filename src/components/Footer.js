@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mt-5 text-xs text-center xl:mt-8 xl:text-base">
         <div className="mt-8 mb-4 justify-center items-center">
           <Link href="/">
-            <button className="inline-flex font-bold !leading-none whitespace-nowrap rounded outline-none transition-colors duration-200 text-sm xl:text-lg py-4 px-6 rounded-full text-white bg-secondary-5 hover:bg-primary-2  py-3 px-3.5 xl:py-4 xl:px-6 ml-4 justify-center items-center">
+            <button className="inline-flex font-bold !leading-none whitespace-nowrap rounded outline-none transition-colors duration-200 text-sm xl:text-lg py-4 px-6 rounded-full text-white bg-secondary-5 hover:bg-primary-2  py-4 px-6 ml-4 justify-center items-center">
               Create a PayPage - It&lsquo;s Free
             </button>
           </Link>
@@ -29,7 +29,7 @@ export function Footer() {
               <Link href="/">Twitter</Link>
             </div>
           </div>
-          <div className="mx-auto w-[257px]">
+          <div className="mx-auto w-[257px] xs:hidden">
             <div className="flex my-4 justify-between">
               <Link href="/">{title}</Link>
               <Link href="/#privacy">Use Cases</Link>
