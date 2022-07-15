@@ -24,7 +24,7 @@ export const Header = ({ pageTitle }) => {
           >
             <Link href="/" shallow className="flex items-center" role="button">
               <span className="logo">&nbsp;</span>
-              <span className="ml-4 xs:hidden">{title}</span>
+              <span className="ml-3">{title}</span>
             </Link>
             <div className="flex items-center -mr-1 hidden">
               <button
@@ -56,7 +56,12 @@ export const Header = ({ pageTitle }) => {
                 className="inline-flex font-bold !leading-none whitespace-nowrap rounded-full outline-none transition-colors duration-200 text-sm xl:text-lg py-4 px-6 rounded-7xl text-white bg-secondary-5 py-3 px-3.5 xl:py-4 xl:px-6"
               >
                 {accounts.length > 0 ? (
-                  accounts[0].address
+                  <>
+                    <span className="xs:hidden">{accounts[0].address}</span>
+                    <span className="md:hidden">
+                      {accounts[0].address.substring(0, 3)}
+                    </span>
+                  </>
                 ) : (
                   <span className="flex items-center">
                     <span className="xs:hidden">Connect Wallet &nbsp;</span>

@@ -7,7 +7,9 @@ const Home = () => {
       <div className="relative max-w-[756px] mx-auto px-4 md:px-6 lg:px-10 xl:px-0 px-0">
         <div className="p-8 px-4 my-16 items-center justify-between">
           <h1 className="font-black text-5xl mt-4 tracking-wide mx-auto text-center">
-            <mark className="bg-secondary-5 text-white px-4">WHATEVER</mark>
+            <mark className="bg-secondary-5 text-white px-4 rounded">
+              WHATEVER
+            </mark>
             <br /> You Want! Sell It! 😁
           </h1>
           <p className="pb-10 p-8 text-lg text-center mx-auto leading-snug">
