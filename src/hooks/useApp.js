@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 
 export const defaults = {
-  title: "",
+  title: "Pay Me Matic",
   description: "",
   managerAddress: "",
   accounts: [
