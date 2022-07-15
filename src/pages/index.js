@@ -30,7 +30,10 @@ const Home = () => {
                     autoFocus
                   />
                 </div>
-                <button className="inline-flex font-bold !leading-none whitespace-nowrap rounded-full outline-none transition-colors duration-200 text-sm sm:text-lg 2xl:text-xl py-4 px-[20px] xl:py-6 xl:px-7 text-white bg-secondary-5 absolute right-0 justify-center !p-0 items-center lg:w-auto right-2 xl:right-4 w-[46px] h-[46px] lg:!py-4 lg:!px-[20px] xl:!py-6 xl:!px-7">
+                <button
+                  className="inline-flex font-bold !leading-none whitespace-nowrap rounded-full outline-none transition-colors duration-200 text-sm sm:text-lg 2xl:text-xl py-4 px-[20px] xl:py-6 xl:px-7 text-white bg-secondary-5 absolute right-0 justify-center !p-0 items-center lg:w-auto right-2 xl:right-4 w-[46px] h-[46px] lg:!py-4 lg:!px-[20px] xl:!py-6 xl:!px-7"
+                  disabled
+                >
                   <span className="hidden lg:block">Claim Page</span>
                   <svg
                     viewBox="0 0 24 24"
@@ -73,7 +76,7 @@ const Home = () => {
             <p className="font-black text-base text-gray-4 uppercase">
               Donations
             </p>
-            <h2 className="font-black text-4xl px-6 mx-auto">
+            <h2 className="font-black text-4xl max-w-[480px] px-6 pb-10 mx-auto">
               Give your audience an easy way to say thanks
             </h2>
             <div
@@ -94,8 +97,8 @@ const Home = () => {
             <p className="font-black text-base text-gray-4 uppercase">
               Sales Generation
             </p>
-            <h2 className="font-black text-4xl px-6 mx-auto">
-              Give your audience an easy way to say thanks
+            <h2 className="font-black text-4xl max-w-[480px] px-6 pb-10 mx-auto">
+              Accept matic with your own page
             </h2>
             <div
               style={{
