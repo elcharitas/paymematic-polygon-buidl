@@ -3,7 +3,7 @@ import { useSnackbar } from "react-simple-snackbar";
 
 import { useApp } from "./useApp";
 
-export default function useWallet() {
+export function useWallet() {
   const { accounts, reset } = useApp();
   const [snackbar] = useSnackbar();
 

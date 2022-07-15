@@ -1,10 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useApp } from "../hooks";
-import useWallet from "../hooks/useWallet";
-import { formatAddress } from "../utils";
+import { useApp, useWallet } from "../hooks";
 
-const Header = () => {
+export const Header = () => {
   const { accounts, title } = useApp();
   const [connectWallet, disconnectWallet] = useWallet();
   return (
@@ -85,5 +83,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;
