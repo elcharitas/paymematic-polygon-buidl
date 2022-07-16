@@ -1,17 +1,9 @@
 import { useState } from "react";
 import { useSnackbar } from "react-simple-snackbar";
 
-import { Link } from "../components";
+import { Sponsor } from "../components";
 import { useManager, useWallet } from "../hooks";
-import {
-  debounce,
-  isNullAddress,
-  parseNumber,
-  getGravatar,
-  sponsors,
-  sponsorBg,
-  formatAddress,
-} from "../utils";
+import { debounce, isNullAddress, parseNumber, sponsors } from "../utils";
 
 const Home = () => {
   const [snackbar] = useSnackbar();
@@ -141,23 +133,7 @@ const Home = () => {
             <div className="flex mt-4 overflow-x-auto">
               <div className="flex justify-between">
                 {sponsors.map(({ address, handle }) => (
-                  <Link href={`/${handle}`} key={handle}>
-                    <div className="bg-secondary-1 p-4 rounded-3xl mr-4">
-                      <div
-                        className="w-[257px] h-[220px] ml-[-5px] rounded"
-                        style={{
-                          backgroundColor:
-                            sponsorBg[address.charAt(2)] ?? sponsorBg[3],
-                          backgroundImage: `url(${getGravatar(address)})`,
-                          backgroundSize: "contain",
-                          backgroundPosition: "center",
-                        }}
-                      />
-                      <p className="mt-3 text-sm leading-snug text-white xl:mt-4 xl:text-lg">
-                        {handle} - {formatAddress(address)}
-                      </p>
-                    </div>
-                  </Link>
+                  <Sponsor key={handle} sponsor={handle} address={address} />
                 ))}
               </div>
             </div>
