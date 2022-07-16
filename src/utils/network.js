@@ -15,7 +15,7 @@ export const web3Modal = (
 ) => {
   return new Web3Modal({
     theme,
-    network: Number(chainId),
+    network: chainId,
     cacheProvider: true,
     disableInjectedProvider: false,
     providerOptions,
@@ -39,7 +39,7 @@ export const provider = {
     if (!this.instance) {
       this.instance = await web3Modal(chainId).connect().catch(reject);
     }
-    this.chainId = String(chainId);
+    this.chainId = chainId;
     return this.instance;
   },
 
@@ -55,9 +55,9 @@ export const provider = {
           return reject({
             message: "No available wallet instance. Try using a dApp browser",
           });
-        if (formatBigNumber(instance.chainId, "wei") !== this.chainId)
-          return reject({ message: "Required chain/network is not available" });
-        return new ethers.providers.Web3Provider(instance, chainId);
+        if (formatBigNumber(instance.chainId, "wei") !== String(this.chainId))
+          return reject({ message: "Please switch to the required network" });
+        return new ethers.providers.Web3Provider(instance);
       })
       .catch(reject);
   },
