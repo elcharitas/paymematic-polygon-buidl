@@ -2,6 +2,7 @@ import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 import { formatBigNumber } from "./formats";
 import { managerAbi } from "./abi";
+import { logger } from "ethers";
 
 const providerOptions = {
   binancechainwallet: {
@@ -22,11 +23,15 @@ export const web3Modal = (
   });
 };
 
-export const manager = async ({ chainId, sync = false }) => {
+export const manager = async ({
+  logger = () => {},
+  sync = false,
+  chainId = process.env.NEXT_PUBLIC_CHAIN_ID,
+}) => {
   const address = process.env.NEXT_PUBLIC_MANAGER;
   const eth3 = sync
     ? provider.ethersSync(process.env.NEXT_PUBLIC_RPC_NODE)
-    : await provider.ethers(chainId, () => {});
+    : await provider.ethers(chainId, logger);
 
   return new ethers.Contract(address, managerAbi, eth3);
 };
