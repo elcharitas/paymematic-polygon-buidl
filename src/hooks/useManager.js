@@ -1,6 +1,7 @@
+import { useEffect, useState } from "react";
 import { manager } from "../utils";
 
-const useManager = (method, args = [], { sync = false, skip = false }) => {
+const useManager = (method, args = [], { sync = true, skip = false }) => {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -19,7 +20,7 @@ const useManager = (method, args = [], { sync = false, skip = false }) => {
         setLoading(false);
       })
       .catch(setError);
-  }, [method, args]);
+  }, [skip]);
 
   return { result, error, loading, mutate };
 };
