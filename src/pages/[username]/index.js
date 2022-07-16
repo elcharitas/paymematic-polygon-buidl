@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useSnackbar } from "react-simple-snackbar";
+import { Sponsor } from "../../components";
 import { useApp, useManager, useWallet } from "../../hooks";
 import {
   formatAddress,
@@ -49,10 +50,12 @@ const UserPage = ({ payee, username, amount = 1 }) => {
     <>
       <div
         className="flex justify-center items-center my-16"
-        style={{ height: "400px" }}
+        style={{ minHeight: "800px" }}
       >
         <div className="text-black text-center">
-          <h2 className="font-black text-5xl ">{formatAddress(payee)}</h2>
+          <div className="flex justify-between">
+            <Sponsor className="mx-auto" sponsor={username} address={payee} />
+          </div>
           <p className="mt-4">
             {title} makes it easy to send <strong>{value} Matic</strong>&nbsp;
             to {formatAddress(payee)}
@@ -75,7 +78,7 @@ const UserPage = ({ payee, username, amount = 1 }) => {
             <button
               disabled={sending}
               onClick={() => setSending(true)}
-              className="inline-flex font-bold !leading-none whitespace-nowrap rounded outline-none transition-colors duration-200 text-sm xl:text-lg py-4 px-6 rounded-full text-white bg-secondary-5  py-4 px-6 ml-4 justify-center items-center"
+              className="inline-flex font-bold !leading-none whitespace-nowrap border border-primary-1 outline-none transition-colors duration-200 text-sm xl:text-lg py-4 px-6 rounded-full text-white bg-secondary-5  py-4 px-6"
             >
               SEND {value} Matic
             </button>

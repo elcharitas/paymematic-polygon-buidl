@@ -133,7 +133,12 @@ const Home = () => {
             <div className="flex mt-4 overflow-x-auto">
               <div className="flex justify-between">
                 {sponsors.map(({ address, handle }) => (
-                  <Sponsor key={handle} sponsor={handle} address={address} />
+                  <Sponsor
+                    key={handle}
+                    sponsor={handle}
+                    address={address}
+                    showHandle
+                  />
                 ))}
               </div>
             </div>
