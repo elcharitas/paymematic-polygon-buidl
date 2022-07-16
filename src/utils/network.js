@@ -31,7 +31,7 @@ export const manager = async ({
   const address = process.env.NEXT_PUBLIC_MANAGER;
   const eth3 = sync
     ? provider.ethersSync(process.env.NEXT_PUBLIC_RPC_NODE)
-    : await provider.ethers(chainId, logger);
+    : (await provider.ethers(chainId, logger)).getSigner();
 
   return new ethers.Contract(address, managerAbi, eth3);
 };
