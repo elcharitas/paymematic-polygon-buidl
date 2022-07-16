@@ -1,3 +1,5 @@
+import md5 from "md5";
+
 export const etherScanUrl = (address) =>
   `https://etherscan.io/address/${address}`;
 
@@ -8,4 +10,4 @@ export const isNullAddress = (address) =>
   address && address.indexOf("0x00") === 0;
 
 export const getGravatar = (address) =>
-  `https://www.gravatar.com/avatar/${address}?r=g&d=robohash&s=300`;
+  `https://www.gravatar.com/avatar/${md5(address)}.jpg?d=robohash&s=500`;
