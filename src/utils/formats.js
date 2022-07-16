@@ -3,7 +3,7 @@ import { utils, ethers } from "ethers";
 export const parseAddress = (address) => utils.getAddress(address);
 
 export const parseNumber = (number) =>
-  ethers.BigNumber.from(utils.parseEther(input.value.toString()));
+  ethers.BigNumber.from(utils.parseEther(number.toString()));
 
 export const parseBytes = (string) => utils.toUtf8Bytes(string);
 
