@@ -22,7 +22,7 @@ export async function getServerSideProps({ params }) {
   };
 }
 
-const UserPage = ({ payee, username, amount = 10 }) => {
+const UserPage = ({ payee, username, amount = 1 }) => {
   const { title } = useApp();
   const [snackbar] = useSnackbar();
 
@@ -64,6 +64,8 @@ const UserPage = ({ payee, username, amount = 10 }) => {
               onChange={(e) => setValue(e.target.value)}
               className="border rounded px-4"
             >
+              <option value="0.5">0.5 Matic</option>
+              <option value="1">1 Matic</option>
               <option value="10">10 Matic</option>
               <option value="25">25 Matic</option>
               <option value="50">50 Matic</option>
