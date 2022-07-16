@@ -7,17 +7,21 @@ export const debounce = (fn, waitTimeout = 1) => {
 };
 
 export const sponsorBg = [
-  "red",
+  "violet",
   "green",
   "blue",
   "yellow",
   "purple",
   "orange",
   "pink",
+  "red",
 ];
 
 export const sponsors = [
   { address: "0x0", handle: "demo" },
-  { address: "elcharitas.eth", handle: "elcharitas" },
+  {
+    address: "0x5B7E131d020D2dd72666EBFDd465c3a8e0f0Cd52",
+    handle: "elcharitas",
+  },
   { address: "0x0", handle: "demo1" },
 ];
