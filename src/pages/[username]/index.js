@@ -22,7 +22,7 @@ export async function getServerSideProps({ params }) {
   };
 }
 
-const UserPage = ({ payee, username, amount = 50 }) => {
+const UserPage = ({ payee, username, amount = 10 }) => {
   const { title } = useApp();
   const [snackbar] = useSnackbar();
 
