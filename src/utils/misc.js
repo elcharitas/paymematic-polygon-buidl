@@ -18,10 +18,10 @@ export const sponsorBg = [
 ];
 
 export const sponsors = [
-  { address: "0x0", handle: "demo" },
+  { address: "0x5B7E131d020D2dd72666EBFDd465c3a8e0f0Cd52", handle: "demo" },
   {
-    address: "0x5B7E131d020D2dd72666EBFDd465c3a8e0f0Cd52",
+    address: "0x249D82cc8F66416EE8737730870bF24ab3264f0A",
     handle: "elcharitas",
   },
-  { address: "0x0", handle: "demo1" },
+  { address: "0x5B7E131d020D2dd72666EBFDd465c3a8e0f0Cd52", handle: "demo1" },
 ];
